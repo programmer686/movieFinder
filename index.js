@@ -16,6 +16,7 @@ let card = document.getElementById("card")
             fetch(`https://www.omdbapi.com/?s=${searchVal}&plot=short&apikey=95ff048`).then(jsoned => jsoned.json()).then(({Search}) => {
                 Search.map(item =>{
                     fetch(`https://www.omdbapi.com/?i=${item.imdbID}&plot=short&apikey=95ff048`).then(jsoned => jsoned.json()).then(data => {
+    
                     result.innerHTML += `
                     <div class="movie--card" >
                         <div class="movie--body">
@@ -43,8 +44,8 @@ let card = document.getElementById("card")
                  console.log(watchListSaved)
                    
                 })}).catch((error) => {result.innerHTML = `<h1 class="error"><span>Error!</span> Either the movie you are looking for can be found, or you spelled it wrong</h1>`})    
-    }
+            }
  
  
  
- 
+        
