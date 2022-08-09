@@ -115,6 +115,8 @@ kbd {width: 50%; text-align: center;}
 
 .genreRuntime--container{
     display: flex;
+    justify-content: center;
+    align-items: center;
     
 }
 
@@ -133,6 +135,26 @@ span {
     width: 100%;
     background-color: #3a3b3c;
     height: 1px;
+}
+
+#switch {
+    width: 100px;
+    border: none;
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 10px 0px;
+}
+
+.add--to--list {
+    padding: 2px 2px;
+    font-family: bolder;
+    text-align: center;
+    border: none;
+    width: 10%;
+    height: 10%;
+    color: black;
+    background-color: white;
+    font-weight: bolder;
 }
 
 @media (max-width: 800px) {
@@ -179,7 +201,7 @@ span {
     }
 
     .movie--title {
-        font-size: 1rem;
+        font-size: 1.3rem;
     }
 
     .genreRuntime--container {
