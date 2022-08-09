@@ -13,9 +13,11 @@
 
 #card {
     background-image: url("movie.jpg");
-    background-size: cover;
-    width: 100%;
-    height: 30vh;
+    background-size:     cover;                      /* <------ */
+    background-repeat:   no-repeat;
+    background-position: center center; 
+    object-fit: contain;
+    width: 100vw;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -28,18 +30,23 @@
 .logo--title {
     color: white;
     bottom: 0;
-    font-size: 4rem;
+    font-size: 60px;
+    padding-bottom: 0;;
 }
 
+kbd {width: 50%; text-align: center;}
+
 .search {
-    width: 300px;
+    width: 80%;
     background: #3a3b3c;
     border: none;
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
     color: white;
-    padding: 15px;
+    padding: 20px;
     margin: 0;
+    font-weight: bold;
+    font-size: medium;
 }
 
 .search--btn {
@@ -48,9 +55,9 @@
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
     color: white;
-    padding: 15px;
+    padding: 20px;
     margin: 0;
-    font-weight: bold
+    font-weight: bold;
 }
 
 .search--btn:hover {
@@ -65,12 +72,16 @@
 #results {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .movie--card {
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 70%;
+    max-width: 80%;
 
 }
 
@@ -99,6 +110,7 @@
 .movie--title, .movie--duration, .movie--genre {
     color: white;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1rem;
 }
 
 .genreRuntime--container{
@@ -124,6 +136,11 @@ span {
 }
 
 @media (max-width: 800px) {
+    
+    .search {
+        width: 80%;
+    }
+    
     .movie--body {
         display: flex;
         flex-direction: column;
@@ -135,20 +152,24 @@ span {
 }
 
     .movie--poster {
-    max-width: 100%;
+    width: 100%;
 }
 
     .controlImg {
-        width: 80%;
+        width: 75%;
         margin: 0;
         margin-top: 50px;
+        text-align: center;
+        margin-top: 0;
     }
 
     #card {
-        width: 100%;
+        width: 100vw;
         align-items: center;
         justify-content: space-around;
         text-align: center;
+        height: 30vh;
+        padding: 0;
     }
     
     .logo--title {
@@ -158,13 +179,37 @@ span {
     }
 
     .movie--title {
-        font-size: x-large;
+        font-size: 1rem;
     }
 
     .genreRuntime--container {
         width: 100%;
     }
+
+    .movie--plot{
+        width: 100%;
+    }
+
+    .movie--body{
+        width: 100vw;
+        border: 1px solid green;
+        height: auto;
+        padding: 10px 0px;
+    }
     
+    .movie--card {
+        width: 100%;
+    }
+
+    .movie--genre, .movie--duration {
+        font-size: 0.6rem;
+    }
+
+    .search {width: 50%;}
+
+    .search, .search--btn {padding: 15px; margin-bottom: 15px;}
+
+    kbd { width: 100%;}
 }
 
 footer {

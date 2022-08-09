@@ -35,8 +35,9 @@ let card = document.getElementById("card")
                         </div>
                    </div>
                    
-                   <span></span> `
-             
+                   <span></span> 
+                   <footer></footer>
+                   `
                     })
                     
                      search=""
