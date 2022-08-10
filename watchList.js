@@ -3,7 +3,6 @@ let data = JSON.parse(window.localStorage.getItem("movieObject")) || []
 
 function handleLoad(){
     for (let i = 0; i < data.length; i++) {
-        console.log(data)
         watchlist.innerHTML += `
                 <div class="movie--card" >
                     <div class="movie--body">
