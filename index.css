@@ -12,11 +12,7 @@
 }
 
 #card {
-    background-image: url("movie.jpg");
-    background-size:     cover;                      /* <------ */
-    background-repeat:   no-repeat;
-    background-position: center center; 
-    object-fit: contain;
+    background: #161515;
     width: 100vw;
     display: flex;
     flex-direction: column;
@@ -25,6 +21,7 @@
     align-content: center;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
+    border-bottom: 1px solid black;
 }
 
 .logo--title {
@@ -34,7 +31,7 @@
     padding-bottom: 0;;
 }
 
-kbd {width: 50%; text-align: center;}
+kbd {width: 50%; text-align: center; margin-bottom: 30px;}
 
 .search {
     width: 80%;
@@ -43,7 +40,7 @@ kbd {width: 50%; text-align: center;}
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
     color: white;
-    padding: 20px;
+    padding: 19px;
     margin: 0;
     font-weight: bold;
     font-size: medium;
@@ -144,6 +141,8 @@ span {
     font-weight: bold;
     border-radius: 5px;
     padding: 10px 0px;
+    position: fixed;
+
 }
 
 .add--to--list {
@@ -155,7 +154,7 @@ span {
     height: 10%;
     color: black;
     background-color: white;
-    font-weight: bolder;
+    font-weight: bolder; 
 }
 
 @media (max-width: 800px) {
@@ -199,6 +198,7 @@ span {
         color: white;
         bottom: 0;
         font-size: 2.3rem;
+        margin-top: 50px;
     }
 
     .movie--title {

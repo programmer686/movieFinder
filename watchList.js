@@ -1,30 +1,29 @@
 let watchlist = document.getElementById("watchList")
 
 
-
-
 let data = JSON.parse(window.localStorage.getItem("movieObject")) || []
-console.log(data.Title)
-    watchlist.innerHTML = `
+
+for (let i = 0; i < data.length; i++) {
+    console.log(data)
+    watchlist.innerHTML += `
             <div class="movie--card" >
                 <div class="movie--body">
                     <div class="controlImg">
-                        <img class="movie--poster" src=${data.Poster} />
+                        <img class="movie--poster" src=${data[i].Poster} />
                     </div>
                     <div class="info--container">
-                        <h1 class="movie--title">${data.Title}</h1>
+                        <h1 class="movie--title">${data[i].Title}</h1>
                         <div class="genreRuntime--container">
-                            <p class="movie--genre">${data.Genre}</p>
-                            <p class="movie--duration">${data.Runtime}</p>
+                            <p class="movie--genre">${data[i].Genre}</p>
+                            <p class="movie--duration">${data[i].Runtime}</p>
                             <button onclick="handleSave()"></button>
                         </div>
-                        <p class="movie--plot">${data.Plot}</p>
+                        <p class="movie--plot">${data[i].Plot}</p>
                         <span></span>
                     </div>
                 </div>
         </div>
 
-        <span></span> 
-
-
-    `
+        <span></span>`
+}
+    
