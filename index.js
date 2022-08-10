@@ -15,32 +15,41 @@ mywatchList.style.display = "none"
         mywatchList.style.display = "none"
         card.style.display = "flex"
         result.style.display = "flex"
-        display ? switched.textContent = "My Watchlist" : switched.textContent = "Search"
+        switched.textContent = "My Watchlist" 
+        
     } else {
         card.style.display = "none"
         result.style.display = "none"
         mywatchList.style.display = "flex"
-        display ? switched.textContent = "My Watchlist" : switched.textContent = "Search"
+         switched.textContent ="Search"
     }}
 
- function handleClick() {
-    handleChange()
- }
+ 
 
  function handleSave() {
     save ? save = false : save = true
-    console.log(save)
  }
 
  
  let movieObject = []
  function handleChange() {
-    
-
+    window.localStorage.clear()
+    movieObject = []
     result.innerHTML = ""
             fetch(`https://www.omdbapi.com/?s=${searchVal}&plot=short&apikey=95ff048`).then(jsoned => jsoned.json()).then(({Search}) => {
                 Search.map(item =>{
                     fetch(`https://www.omdbapi.com/?i=${item.imdbID}&plot=short&apikey=95ff048`).then(jsoned => jsoned.json()).then(data => { 
+                    
+                        if (save){
+                            movieObject.push({
+                                "ID": data.imdbID,
+                                "Title": data.Title,
+                                "Poster": data.Poster,
+                                "Genre": data.Genre,
+                                "Runtime": data.Runtime,
+                                "Plot": data.Plot
+                            })
+                            window.localStorage.setItem("movieObject", JSON.stringify(movieObject))}else {console.log("false")}
                     result.innerHTML +=`
                     <div class="movie--card" >
                         <div class="movie--body">
@@ -65,22 +74,12 @@ mywatchList.style.display = "none"
                    `
                     document.getElementById("movieSave").addEventListener("click", handleSave)
 
-                   if (save){
-
-                    console.log("true")
-                    movieObject.push({
-                        "ID": data.imdbID,
-                        "Title": data.Title,
-                        "Poster": data.Poster,
-                        "Genre": data.Genre,
-                        "Runtime": data.Runtime,
-                        "Plot": data.Plot
-                    })
-                    window.localStorage.setItem("movieObject", JSON.stringify(movieObject))}else {console.log("false")} }
+                    }
                     
                 )
                    
                 })}).catch((error) => {result.innerHTML = `<h1 class="error"><span>Error!</span> Either the movie you are looking for can be found, or you spelled it wrong</h1>`})    
+            
             }
  
 
