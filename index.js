@@ -6,7 +6,6 @@ let card = document.getElementById("card")
 
  let searchVal = ""
  let watchListSaved = ""
-let save = true
 let display = true
 mywatchList.style.display = "none"
  function handleSwtich() {
@@ -30,8 +29,9 @@ mywatchList.style.display = "none"
 
  
  let movieObject = []
+ let wannawatch = []
  function handleChange() {
-    let id = ""
+    let save = false
     window.localStorage.clear()
     movieObject = []
     result.innerHTML = ""
@@ -75,6 +75,20 @@ mywatchList.style.display = "none"
                    <span></span> 
                    <footer></footer>
                    `
+                   wannawatch.push(data.imdbID)
+
+                   document.getElementById("movieSave").addEventListener("click", () => {
+                   
+                    window.localStorage.setItem("movieObject", JSON.stringify(wannawatch))
+                   })
+                   
+                   
+                   
+                    
+                    
+
+                    
+
                   /*  movieObject.push({
                         "ID": data.imdbID,
                         "Title": data.Title,
