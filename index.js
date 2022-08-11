@@ -26,9 +26,7 @@ mywatchList.style.display = "none"
 
  
 
- function handleSave() {
-    save ? save = false : save = true
- }
+ 
 
  
  let movieObject = []
@@ -40,9 +38,10 @@ mywatchList.style.display = "none"
             fetch(`https://www.omdbapi.com/?s=${searchVal}&plot=short&apikey=95ff048`).then(jsoned => jsoned.json()).then(({Search}) => {
                 Search.map(item =>{
                     fetch(`https://www.omdbapi.com/?i=${item.imdbID}&plot=short&apikey=95ff048`).then(jsoned => jsoned.json()).then(data => { 
-                        function handleSave() {
+                        console.log(data)
+                   /* function handleSave() {
                             console.log("HandleSave is working")
-                             /* movieObject.push({
+                              movieObject.push({
                                  "ID": data.imdbID,
                                  "Title": data.Title,
                                  "Poster": data.Poster,
@@ -51,7 +50,7 @@ mywatchList.style.display = "none"
                                  "Plot": data.Plot
                              })
                              window.localStorage.setItem("movieObject", JSON.stringify(movieObject))*/
-                            }   
+                             
                        
                             
                     result.innerHTML +=`
@@ -76,13 +75,23 @@ mywatchList.style.display = "none"
                    <span></span> 
                    <footer></footer>
                    `
-                   document.getElementById("movieSave").addEventListener("click", handleSave)
-
+                  /*  movieObject.push({
+                        "ID": data.imdbID,
+                        "Title": data.Title,
+                        "Poster": data.Poster,
+                        "Genre": data.Genre,
+                        "Runtime": data.Runtime,
+                        "Plot": data.Plot
+                    })
+                    window.localStorage.setItem("movieObject", JSON.stringify(movieObject))*/
+                       
+               
+                  
                    })
                    
                 })}).catch((error) => {result.innerHTML = `<h1 class="error"><span>Error!</span> Either the movie you are looking for can be found, or you spelled it wrong</h1>`})    
             
             }
- 
+            
 
            /**/
