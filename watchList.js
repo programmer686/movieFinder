@@ -1,8 +1,10 @@
 let watchlist = document.getElementById("watchList")
 let data = JSON.parse(window.localStorage.getItem("movieObject")) || []
 
-function handleLoad(){
+    
+ function handleLoading(){
     for (let i = 0; i < data.length; i++) {
+        console.log(data[i])
         watchlist.innerHTML += `
                 <div class="movie--card" >
                     <div class="movie--body">
@@ -22,14 +24,8 @@ function handleLoad(){
                     </div>
             </div>
     
-            <span></span>`
-        
-      
-    }}
+            <span></span>`}}
 
-function handleLoading() {
-    setTimeout(handleLoad, 8000)
-}
 
 
 

@@ -33,23 +33,27 @@ mywatchList.style.display = "none"
  
  let movieObject = []
  function handleChange() {
+    let id = ""
     window.localStorage.clear()
     movieObject = []
     result.innerHTML = ""
             fetch(`https://www.omdbapi.com/?s=${searchVal}&plot=short&apikey=95ff048`).then(jsoned => jsoned.json()).then(({Search}) => {
                 Search.map(item =>{
                     fetch(`https://www.omdbapi.com/?i=${item.imdbID}&plot=short&apikey=95ff048`).then(jsoned => jsoned.json()).then(data => { 
-                    
-                        if (save){
-                            movieObject.push({
-                                "ID": data.imdbID,
-                                "Title": data.Title,
-                                "Poster": data.Poster,
-                                "Genre": data.Genre,
-                                "Runtime": data.Runtime,
-                                "Plot": data.Plot
-                            })
-                            window.localStorage.setItem("movieObject", JSON.stringify(movieObject))}else {console.log("false")}
+                        function handleSave() {
+                            console.log("HandleSave is working")
+                             /* movieObject.push({
+                                 "ID": data.imdbID,
+                                 "Title": data.Title,
+                                 "Poster": data.Poster,
+                                 "Genre": data.Genre,
+                                 "Runtime": data.Runtime,
+                                 "Plot": data.Plot
+                             })
+                             window.localStorage.setItem("movieObject", JSON.stringify(movieObject))*/
+                            }   
+                       
+                            
                     result.innerHTML +=`
                     <div class="movie--card" >
                         <div class="movie--body">
@@ -72,15 +76,13 @@ mywatchList.style.display = "none"
                    <span></span> 
                    <footer></footer>
                    `
-                    document.getElementById("movieSave").addEventListener("click", handleSave)
+                   document.getElementById("movieSave").addEventListener("click", handleSave)
 
-                    }
-                    
-                )
+                   })
                    
                 })}).catch((error) => {result.innerHTML = `<h1 class="error"><span>Error!</span> Either the movie you are looking for can be found, or you spelled it wrong</h1>`})    
             
             }
  
 
-        
+           /**/
