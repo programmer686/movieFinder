@@ -11,6 +11,8 @@
     box-sizing: border-box;
 }
 
+
+
 #card {
     background-image: url("space.jpg");
     background-size: cover;
@@ -27,6 +29,15 @@
     border-top-right-radius: 5px;
     width: 100vw;
 }
+
+#watchList {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100vw;
+}
+
 
 .logo--title {
     color: white;
@@ -117,7 +128,7 @@ kbd { width: 60%;
 .movie--title, .movie--duration, .movie--genre {
     color: white;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    margin-right: 5px;
+    margin: 15px;
     padding: 0;
     padding-top: 0;
 }
@@ -168,8 +179,8 @@ span {
     border: none;
     width: 15px;
     height: 15px;
-    color: white;
-    background-color: black;
+    color: black;
+    background-color: white;
     font-weight: bolder;
     margin: 0;
     margin-left: 15px;
