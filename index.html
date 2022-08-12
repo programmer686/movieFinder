@@ -1,27 +1,24 @@
  <!DOCTYPE html>
  <html lang="en">
  <head>
+    <link rel="icon" href="movie-icon.png" type="image/x-icon"/>
     <link rel="stylesheet" href="index.css" />
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Movie Finder</title>
+    <title>Finding Movies</title>
  </head>
-    <body>
-        <div id="card">
-            <h1 class="logo--title">Find Your film</h1>
-                <kbd><input id="search" onkeypress="handleEnter()"class="search"  placeholder="Enter movie..."/><button class="search--btn" id="searchBtn" onclick="handleChange()"> Search</button></kbd>
-        </div>
-        <button id="switch" onclick="handleSwtich()" >My Watchlist</button>
-        <div class="x">
-                <div id="results"></div>
-              <div id="watchList"></div>
-        </div>
-        <footer></footer>
-          <script src="index.js" type="text/javascript" ></script>  
-
+ <body>
+  <a href="watchList.html" class="a"><button id="switch" onclick="handleLoading()">My Watchlist</button></a>
+  <div id="card">
+    <h1 class="logo--title">Find Your film</h1>
+    <kbd><input id="search" onkeypress="handleEnter()"class="search"  placeholder="Enter movie..."/><button class="search--btn" id="searchBtn" onclick="handleChange()"> Search</button></kbd>
+  </div>
+  <div class="x">
+    <div id="results"></div>
+  </div>
+  <script src="index.js" type="text/javascript" ></script>  
  </body>
-
- </html>
+</html>
  
  

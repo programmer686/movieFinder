@@ -1,40 +1,99 @@
- html, body {
+html, * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    box-sizing: border-box;
     margin: 0;
     background: #161515;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 0;
-    height: 100vh;
+    width: 100%;
     height: 80vw;
     width: auto;
     box-sizing: border-box;
 }
-
-
-
+/* BODIES */
 #card {
     background: #161515;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    align-content: center;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
-    width: 100vw;
+    width: 100%;
+    padding-top: 5%;
 }
-
 #watchList {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     width: 100vw;
-    margin-top: 1.5%;
+    margin-top: 2%;
+}
+#results {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.search--container {
+   display: flex;
+}
+kbd {
+    width: 60%;
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.movie--card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    max-width: 80%;
+}
+.movie--body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0px;
+    width: 80%;
+    justify-content: space-between 
+}
+.controlImg {
+    width: auto;
+    margin: 0;
+    margin-right: 25px;
+}
+.genreRuntime--container{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0;
+    margin: 0;
 }
 
-
+.no--saved--container {
+    background-color: #3a3b3c;
+    border-radius: 5px;
+    text-align: center;
+    margin-top: 10%;
+    width: 60%;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: -2px 5px 5px black;
+}
+/* TEXT */
 .logo--title {
     color: white;
     font-size: 60px;
@@ -42,14 +101,49 @@
     font-weight: 900;
     font-family: monospace;
 }
-
-kbd { width: 60%;
-    margin-bottom: 0;
-    display: flex;
-    align-items: center; 
-    justify-content: center;
+.movie--title, .movie--duration, .movie--genre, .movie--rating, .info--separators {
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 10px 0px;
+    padding: 0;
+    padding-top: 0;
+}
+.movie--title {
+    font-size: larger;
+}
+.info--separators {
+   margin-right: 15px;
+}
+.movie--duration, .movie--genre {
+    margin-right: 15px;
+}
+.movie--plot {
+    color: gray;
+    font-size: medium;
+    line-height: 1.5rem 
+}
+.star {
+    margin-right: 15px;
+    margin-left: 5px;
 }
 
+.minus {
+    width: 50%;
+    background: black;
+    height: 2px;
+
+}
+
+.camera {
+    font-size: 80px;
+}
+
+.no--movie--text {
+    color: white;
+    font-family: monospace;
+    margin-bottom: 20px;
+}
+/* INPUT ELEMENTS */
 .search {
     width: 80%;
     background: #3a3b3c;
@@ -62,7 +156,7 @@ kbd { width: 60%;
     font-weight: bold;
     font-size: medium;
 }
-
+/* BUTTONS */
 .search--btn {
     background: #3a3b3c;
     border: none;
@@ -73,98 +167,11 @@ kbd { width: 60%;
     margin: 0;
     font-weight: bold;
 }
-
 .search--btn:hover {
     color: black;
     cursor: pointer;
 }
-
-.search--container {display: flex;}
-
-
-
-#results {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.movie--card {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 70%;
-    max-width: 80%;
-
-}
-
-.movie--body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 20px 0px;
-    width: 80%;
-    justify-content: space-between
-}
-
-
-
-.movie--poster {
-    max-width: 150px;
-}
-
-.controlImg {
-    width: auto;
-    margin: 0;
-    margin-right: 25px;
-}
-
-
-.movie--title, .movie--duration, .movie--genre, .movie--rating, .info--separators {
-    color: white;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    margin: 10px 0px;
-    padding: 0;
-    padding-top: 0;
-}
-
-.genreRuntime--container{
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    padding: 0;
-    margin: 0;
-    
-}
-
-.info--separators {margin-right: 15px;}
-
-.movie--duration, .movie--genre {
-    margin-right: 15px;
-}
-
-.movie--plot {
-    color: gray;
-    font-size: medium;
-    line-height: 1.5rem
-}
-
-.star {
-    margin-right: 15px;
-    margin-left: 5px;
-}
-
-
-span {
-    width: 100%;
-    background-color: #3a3b3c;
-    height: 1px;
-    color: red; 
-
-}
-
-#switch {
+#switch, .a {
     width: 100px;
     border: none;
     font-weight: bold;
@@ -174,10 +181,8 @@ span {
     position: fixed;
     color: black;
     background-color: white;
-
 }
-
-.add--to--list {
+.add--to--list, .remove--btn {
     align-content: center;
     border-radius: 50%;
     border: none;
@@ -192,12 +197,14 @@ span {
     justify-content: center;
     align-items: center;
 }
-
-footer {
-    width: 100vw;
-    background-color: red;
-    height: 20vh;
-    bottom: 0;
+/* ELEMENTS THAT I CANT FIT IN ANOTHER AREA*/
+.movie--poster {
+    max-width: 150px;
+}
+span {
+    width: 100%;
+    background-color: #3a3b3c;
+    height: 1px;
 }
 
 @media (max-width: 500px) {
@@ -229,8 +236,6 @@ footer {
     }
 
     #card {
-        background-image: url("space.jpg");
-        background-repeat: no-repeat;
         width: 100vw;
         height: auto;
         align-items: center;
@@ -238,6 +243,7 @@ footer {
         text-align: center;
         height: 30vh;
         padding: 0;
+        top: 0;
     }
     
     .logo--title {
@@ -288,6 +294,12 @@ footer {
     .add--to--list {
         width: 15px;
         height: 15px;
+    }
+
+    .no--saved--container {
+        margin-top: 20%;
+        width: 90%;
+        padding: 10px;
     }
 }
 
