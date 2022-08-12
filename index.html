@@ -10,15 +10,18 @@
     <body>
         <div id="card">
             <h1 class="logo--title">Find Your film</h1>
-                <kbd><input id="search" class="search"  placeholder="Enter movie..."/><button class="search--btn"  onclick="handleChange()"> Search</button></kbd>
+                <kbd><input id="search" onkeypress="handleEnter()"class="search"  placeholder="Enter movie..."/><button class="search--btn" id="searchBtn" onclick="handleChange()"> Search</button></kbd>
         </div>
         <button id="switch" onclick="handleSwtich()" >My Watchlist</button>
         <div class="x">
                 <div id="results"></div>
               <div id="watchList"></div>
         </div>
+        <footer></footer>
           <script src="index.js" type="text/javascript" ></script>  
+
  </body>
+
  </html>
  
  

@@ -14,12 +14,7 @@
 
 
 #card {
-    background-image: url("space.jpg");
-    background-size: cover;
-    object-fit: cover;
-    object-position: center;
-    background-repeat: no-repeat;
-    aspect-ratio: 100vw;
+    background: #161515;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -36,6 +31,7 @@
     align-items: center;
     flex-direction: column;
     width: 100vw;
+    margin-top: 1.5%;
 }
 
 
@@ -61,7 +57,7 @@ kbd { width: 60%;
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
     color: white;
-    padding: 18px;
+    padding: 18.5px;
     margin: 0;
     font-weight: bold;
     font-size: medium;
@@ -125,31 +121,38 @@ kbd { width: 60%;
 }
 
 
-.movie--title, .movie--duration, .movie--genre {
+.movie--title, .movie--duration, .movie--genre, .movie--rating, .info--separators {
     color: white;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    margin: 15px;
+    margin: 10px 0px;
     padding: 0;
     padding-top: 0;
 }
 
 .genreRuntime--container{
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     justify-content: flex-start;
     padding: 0;
     margin: 0;
     
 }
 
+.info--separators {margin-right: 15px;}
+
 .movie--duration, .movie--genre {
-    margin: 0px 0px;
+    margin-right: 15px;
 }
 
 .movie--plot {
     color: gray;
     font-size: medium;
     line-height: 1.5rem
+}
+
+.star {
+    margin-right: 15px;
+    margin-left: 5px;
 }
 
 
@@ -175,18 +178,26 @@ span {
 }
 
 .add--to--list {
+    align-content: center;
     border-radius: 50%;
     border: none;
-    width: 15px;
-    height: 15px;
+    width: 20px;
+    height: 20px;
     color: black;
     background-color: white;
     font-weight: bolder;
     margin: 0;
-    margin-left: 15px;
+    margin-left: 1px;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+footer {
+    width: 100vw;
+    background-color: red;
+    height: 20vh;
+    bottom: 0;
 }
 
 @media (max-width: 500px) {
@@ -241,7 +252,7 @@ span {
     }
 
     .genreRuntime--container {
-        width: 100%;
+        width: 120%;
     }
 
     .movie--plot{
@@ -258,15 +269,25 @@ span {
         width: 100%;
     }
 
-    .movie--genre, .movie--duration {
-        font-size: 0.6rem;
+    .movie--genre, .movie--duration, .movie--rating, .info--separators {
+        font-size: 0.5rem;
+        margin: 0px 2px;
     }
 
-    .search {width: 50%; padding: 15px}
+   
 
-    .search--btn {padding: 15px;}
-
-    kbd { width: 100%; margin-bottom: 0;
+    kbd { width:80%; margin-bottom: 0;
     display: flex; align-items: center; justify-content: center;}
+
+    .star {
+        font-size: x-small;
+        margin-right: 5px;
+        margin-left: 5px;
+    }
+
+    .add--to--list {
+        width: 15px;
+        height: 15px;
+    }
 }
 
