@@ -1,8 +1,6 @@
 let watchlist = document.getElementById("watchList");
 let data = JSON.parse(window.localStorage.getItem("movieData"));
-console.log(data.length == 0);
 if (data.length == 0) {
-  console.log("working");
   watchlist.innerHTML = `
   <div class="no--saved--container">
     <h1 class="no--movie--text">You dont have any movies saved yet!</h1>

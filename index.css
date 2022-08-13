@@ -156,6 +156,10 @@ kbd {
     font-weight: bold;
     font-size: medium;
 }
+
+.added {
+    color: green;
+}
 /* BUTTONS */
 .search--btn {
     background: #3a3b3c;

@@ -8,7 +8,7 @@ let search = document
 let searchBtn = document.getElementById("searchBtn");
 let result = document.getElementById("results");
 let card = document.getElementById("card");
-
+let avaliableData = JSON.parse(window.localStorage.getItem("movieData"))
 function handleEnter(ele) {
   if (event.key === "Enter") {
     handleChange();
@@ -32,8 +32,10 @@ function handleChange() {
         )
           .then((jsoned) => jsoned.json())
           .then((data) => {
-            let id = data.imdbID;
-            result.innerHTML += `
+            let hasOrNo = false
+            
+            
+               result.innerHTML += `
                     <div class="movie--card" >
                         <div class="movie--body">
                             <div class="controlImg">
@@ -48,7 +50,7 @@ function handleChange() {
                                     <p class="info--separators">|</p>
                                     <p class="movie--rating">${data.imdbRating}</p><p class="star"> ⭐ </p>
                                     <p class="info--separators">|</p>
-                                    <button id="movieSave" onclick="storingData('${id}', '${data.Title}')" class="add--to--list" >+</button>
+                                    <button id="movieSave" onclick="storingData('${data.imdbID}', '${data.Title}')" class="add--to--list" >+</button>
                                 </div>
                                 <p class="movie--plot">${data.Plot}</p>
                                  <span></span>
@@ -56,7 +58,9 @@ function handleChange() {
                         </div>
                    </div>
                     <span></span> 
-                   `;
+                   `
+            
+            ;
           });
       });
     })
