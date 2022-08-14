@@ -13,7 +13,7 @@ body {
     justify-content: center;
     padding: 0;
     width: 100%;
-    width: auto;
+    height: auto;
     box-sizing: border-box;
 }
 /* BODIES */
@@ -25,8 +25,8 @@ body {
     justify-content: center;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
-    width: 100%;
-    padding-top: 5%;
+    margin: 0;
+    margin-top: 3%;
 }
 #watchList {
     display: flex;
@@ -42,13 +42,14 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    height: 100%;
 }
 .search--container {
    display: flex;
 }
 kbd {
-    width: 60%;
-    margin-bottom: 0;
+    width: 80%;
+    margin-bottom: 2%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -61,6 +62,7 @@ kbd {
     width: 70%;
     max-width: 80%;
 }
+
 .movie--body {
     display: flex;
     justify-content: center;
@@ -108,7 +110,7 @@ kbd {
 .logo--title {
     color: white;
     font-size: 60px;
-    padding-bottom: 2%;
+    margin-bottom: 2%;
     font-weight: 900;
     font-family: monospace;
     
@@ -212,7 +214,6 @@ kbd {
     width: 200px;
     border: none;
     font-weight: bold;
-    border-radius: 5px;
     padding: 20px 0px;
     color: black;
     background-color: white;
@@ -220,10 +221,17 @@ kbd {
     
 }
 
+#switch--watchlist {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
 #switch--watchlist--delete{
     color: black;
     background-color: red;
-    margin-left: auto
+    margin-left: auto;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
 }
 
 .add--to--list, .remove--btn {
@@ -262,8 +270,9 @@ span {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        margin: 20px 0px;
+        margin: 0px 0px;
         width: 50%;
+        padding: 0;
         justify-content: space-between
 }
 
@@ -288,9 +297,10 @@ span {
         height: 30vh;
         padding: 0;
         top: 0;
+        margin-bottom: 8%;
     }
 
-    #watchList {margin-top: 15px;}
+    #watchList {margin-top: 0px; padding-top: 5%;}
     
     .logo--title {
         color: white;
@@ -351,6 +361,23 @@ span {
     #switch {
         width: 50%;
         padding: 5px;
+    }
+    .watchList-btn--container {
+        flex-direction: column;
+    }
+
+    #switch--watchlist {
+        padding: 10px;
+        margin-top: 2%;
+        border-radius: 5px;
+    }
+     
+    #switch--watchlist--delete {
+        margin: 0;
+        width: 40%;
+        margin-top: 2%;
+        padding: 10px;
+        border-radius: 5px;
     }
 }
 

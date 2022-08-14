@@ -1,5 +1,4 @@
 const { waitUntilSymbol } = "next/dist/server/web/spec-compliant/fetch-event";
-// window.localStorage.clear()
 let search = document
   .getElementById("search")
   .addEventListener("change", (event) => {
@@ -8,7 +7,7 @@ let search = document
 let searchBtn = document.getElementById("searchBtn");
 let result = document.getElementById("results");
 let card = document.getElementById("card");
-let avaliableData = JSON.parse(window.localStorage.getItem("movieData"))
+let avaliableData = JSON.parse(window.localStorage.getItem("movieData"));
 function handleEnter(ele) {
   if (event.key === "Enter") {
     handleChange();
@@ -19,19 +18,15 @@ let storingInfo = JSON.parse(window.localStorage.getItem("movieData")) || [];
 function storingData(id, name) {
   storingInfo.unshift([name, id]);
   window.localStorage.setItem("movieData", JSON.stringify(storingInfo));
-  let body = document.getElementById("movie--card")
-  let button = document.getElementById("movieSave")
-  button.remove()
+  document.getElementById(id).remove();
 }
-
-let id = 1
 
 function movieRender(movie) {
   result.innerHTML += `
-  <div id="movie--card" class="movie--card" >
+  <div class="movie--card" >
       <div class="movie--body">
           <div class="controlImg">
-              <img class="movie--poster" src=${movie.Poster} />
+              <img class="movie--poster" id=${movie.imdbID} src=${movie.Poster} />
           </div>
           <div class="info--container">
               <h1 class="movie--title">${movie.Title}</h1>
@@ -40,18 +35,24 @@ function movieRender(movie) {
                   <p class="info--separators">|</p>
                   <p class="movie--duration">${movie.Runtime}</p>
                   <p class="info--separators">|</p>
-                  <p class="movie--rating">${movie.imdbRating}</p><p class="star"> ⭐ </p>
+                  <p class="movie--rating">${
+                    movie.imdbRating
+                  }</p><p class="star"> ⭐ </p>
                   <p class="info--separators">|</p>
-                  ${savedOrNo ? `<p class="added">Added</p>` : `<button id="id" onclick="storingData('${movie.imdbID}', '${movie.Title}')" class="add--to--list" >+</button>` }
+                  ${
+                    savedOrNo
+                      ? `<p class="added">Added</p>`
+                      : `<button id='${movie.imdbID}' onclick="storingData('${movie.imdbID}', '${movie.Title}')" class="add--to--list" >+</button>`
+                  }
               </div>
               <p class="movie--plot">${movie.Plot}</p>
                <span></span>
           </div>
       </div>
  </div>
-  <span></span>`
+  <span></span>`;
 }
-let savedOrNo = false
+let savedOrNo = false;
 function handleChange() {
   result.innerHTML = "";
   fetch(`https://www.omdbapi.com/?s=${searchVal}&plot=short&apikey=95ff048`)
@@ -65,12 +66,13 @@ function handleChange() {
           .then((data) => {
             for (let i in avaliableData) {
               if (avaliableData[i][1] !== data.imdbID) {
-                savedOrNo = false
+                savedOrNo = false;
               } else if (avaliableData[i][1] === data.imdbID) {
-                savedOrNo = true
-                break}}
-                movieRender(data);
-                
+                savedOrNo = true;
+                break;
+              }
+            }
+            movieRender(data);
           });
       });
     })
@@ -78,5 +80,3 @@ function handleChange() {
       result.innerHTML = `<h1 class="error"><span>Error!!! Something Went wrong</span></h1>`;
     });
 }
-
-

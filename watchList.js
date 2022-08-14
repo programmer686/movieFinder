@@ -19,6 +19,7 @@ if (data.length == 0) {
 } else {
   handleLoading();
   function removeOne(id) {
+    
     for (let i in data) {
       if (data[i][1] === id) {
         let index = data.indexOf(data[i]);
@@ -26,7 +27,7 @@ if (data.length == 0) {
         window.localStorage.setItem("movieData", JSON.stringify(data));
       }
     }
-    console.log(data === []);
+    document.getElementById(id).remove()
   }
   function handleLoading() {
     watchlist.innerHTML = "";
@@ -37,7 +38,7 @@ if (data.length == 0) {
         .then((jsoned) => jsoned.json())
         .then((info) => {
           watchlist.innerHTML += `
-                      <div class="movie--card save--movie" >
+                      <div id='${info.imdbID}' class="movie--card save--movie" >
                           <div class="movie--body save--movie--body">
                               <div class="controlImg">
                                   <img class="movie--poster" src=${info.Poster} />
