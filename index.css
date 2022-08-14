@@ -10,9 +10,9 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     padding: 0;
     width: 100%;
-    height: 80vw;
     width: auto;
     box-sizing: border-box;
 }
@@ -35,6 +35,7 @@ body {
     flex-direction: column;
     width: 100vw;
     margin-top: 2%;
+    padding: 50px;
 }
 #results {
     display: flex;
@@ -51,6 +52,7 @@ kbd {
     display: flex;
     align-items: center;
     justify-content: center;
+    padding-bottom: 2%;
 }
 .movie--card {
     display: flex;
@@ -84,7 +86,6 @@ kbd {
     background-color: #3a3b3c;
     border-radius: 5px;
     text-align: center;
-    margin-top: 10%;
     width: 60%;
     height: 60vh;
     display: flex;
@@ -93,13 +94,24 @@ kbd {
     justify-content: center;
     box-shadow: -2px 5px 5px black;
 }
+
+.watchList-btn--container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 15vh;
+    margin: 0px 15px;
+}
+
 /* TEXT */
 .logo--title {
     color: white;
     font-size: 60px;
-    padding-bottom: 0;
+    padding-bottom: 2%;
     font-weight: 900;
     font-family: monospace;
+    
 }
 .movie--title, .movie--duration, .movie--genre, .movie--rating, .info--separators {
     color: white;
@@ -143,6 +155,19 @@ kbd {
     font-family: monospace;
     margin-bottom: 20px;
 }
+
+.added {
+    width: 20px;
+    color: black;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: green;
+    font-size: medium;
+    text-shadow: -0.5 2px 2px gray;
+}
 /* INPUT ELEMENTS */
 .search {
     width: 80%;
@@ -157,9 +182,7 @@ kbd {
     font-size: medium;
 }
 
-.added {
-    color: green;
-}
+
 /* BUTTONS */
 .search--btn {
     background: #3a3b3c;
@@ -176,16 +199,33 @@ kbd {
     cursor: pointer;
 }
 #switch, .a {
-    width: 100px;
+    width: 200px;
     border: none;
     font-weight: bold;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
+    border-radius: 5px;
     padding: 10px 0px;
-    position: fixed;
     color: black;
     background-color: white;
 }
+
+#switch--watchlist, #switch--watchlist--delete{
+    width: 200px;
+    border: none;
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 20px 0px;
+    color: black;
+    background-color: white;
+    margin: 0;
+    
+}
+
+#switch--watchlist--delete{
+    color: black;
+    background-color: red;
+    margin-left: auto
+}
+
 .add--to--list, .remove--btn {
     align-content: center;
     border-radius: 50%;
@@ -288,7 +328,7 @@ span {
 
    
 
-    kbd { width:80%; margin-bottom: 0;
+    kbd { width:80%; margin-bottom: 10px;
     display: flex; align-items: center; justify-content: center;}
 
     .star {
@@ -303,9 +343,14 @@ span {
     }
 
     .no--saved--container {
-        margin-top: 20%;
+        margin-top: 10%;
         width: 90%;
         padding: 10px;
+    }
+
+    #switch {
+        width: 50%;
+        padding: 5px;
     }
 }
 

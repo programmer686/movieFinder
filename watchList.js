@@ -1,5 +1,14 @@
 let watchlist = document.getElementById("watchList");
 let data = JSON.parse(window.localStorage.getItem("movieData"));
+let removeAll = document.getElementById("switch--watchlist--delete").addEventListener("click", () => {
+  window.localStorage.clear()
+  watchlist.innerHTML = `
+  <div class="no--saved--container">
+    <h1 class="no--movie--text">You dont have any movies saved yet!</h1>
+    <h1 class="no--movie--text">Go find some</h1>
+    <h1 class="camera">🎥</h1>
+</div>`;
+})
 if (data.length == 0) {
   watchlist.innerHTML = `
   <div class="no--saved--container">
@@ -9,7 +18,7 @@ if (data.length == 0) {
 </div>`;
 } else {
   handleLoading();
-  function remove(id) {
+  function removeOne(id) {
     for (let i in data) {
       if (data[i][1] === id) {
         let index = data.indexOf(data[i]);
@@ -19,7 +28,6 @@ if (data.length == 0) {
     }
     console.log(data === []);
   }
-
   function handleLoading() {
     watchlist.innerHTML = "";
     for (let i in data) {
@@ -42,7 +50,7 @@ if (data.length == 0) {
                                       <p class="movie--duration">${info.Runtime}</p>
                                       <p class="info--separators">|</p>
                                       <p class="movie--rating">${info.imdbRating}</p><p class="star">⭐</p>
-                                      <button class="remove--btn" onclick="remove('${info.imdbID}')"><span class="minus"></span></button>
+                                      <button class="remove--btn" onclick="removeOne('${info.imdbID}')"><span class="minus"></span></button>
                                   </div>
                                   <p class="movie--plot">${info.Plot}</p>
                                    <span></span>

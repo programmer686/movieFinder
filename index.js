@@ -14,13 +14,44 @@ function handleEnter(ele) {
     handleChange();
   }
 }
-
 let searchVal = "";
 let storingInfo = JSON.parse(window.localStorage.getItem("movieData")) || [];
 function storingData(id, name) {
   storingInfo.unshift([name, id]);
   window.localStorage.setItem("movieData", JSON.stringify(storingInfo));
+  let body = document.getElementById("movie--card")
+  let button = document.getElementById("movieSave")
+  button.remove()
 }
+
+let id = 1
+
+function movieRender(movie) {
+  result.innerHTML += `
+  <div id="movie--card" class="movie--card" >
+      <div class="movie--body">
+          <div class="controlImg">
+              <img class="movie--poster" src=${movie.Poster} />
+          </div>
+          <div class="info--container">
+              <h1 class="movie--title">${movie.Title}</h1>
+              <div class="genreRuntime--container">
+                  <p class="movie--genre">${movie.Genre}</p>
+                  <p class="info--separators">|</p>
+                  <p class="movie--duration">${movie.Runtime}</p>
+                  <p class="info--separators">|</p>
+                  <p class="movie--rating">${movie.imdbRating}</p><p class="star"> ⭐ </p>
+                  <p class="info--separators">|</p>
+                  ${savedOrNo ? `<p class="added">Added</p>` : `<button id="id" onclick="storingData('${movie.imdbID}', '${movie.Title}')" class="add--to--list" >+</button>` }
+              </div>
+              <p class="movie--plot">${movie.Plot}</p>
+               <span></span>
+          </div>
+      </div>
+ </div>
+  <span></span>`
+}
+let savedOrNo = false
 function handleChange() {
   result.innerHTML = "";
   fetch(`https://www.omdbapi.com/?s=${searchVal}&plot=short&apikey=95ff048`)
@@ -32,35 +63,14 @@ function handleChange() {
         )
           .then((jsoned) => jsoned.json())
           .then((data) => {
-            let hasOrNo = false
-            
-            
-               result.innerHTML += `
-                    <div class="movie--card" >
-                        <div class="movie--body">
-                            <div class="controlImg">
-                                <img class="movie--poster" src=${data.Poster} />
-                            </div>
-                            <div class="info--container">
-                                <h1 class="movie--title">${data.Title}</h1>
-                                <div class="genreRuntime--container">
-                                    <p class="movie--genre">${data.Genre}</p>
-                                    <p class="info--separators">|</p>
-                                    <p class="movie--duration">${data.Runtime}</p>
-                                    <p class="info--separators">|</p>
-                                    <p class="movie--rating">${data.imdbRating}</p><p class="star"> ⭐ </p>
-                                    <p class="info--separators">|</p>
-                                    <button id="movieSave" onclick="storingData('${data.imdbID}', '${data.Title}')" class="add--to--list" >+</button>
-                                </div>
-                                <p class="movie--plot">${data.Plot}</p>
-                                 <span></span>
-                            </div>
-                        </div>
-                   </div>
-                    <span></span> 
-                   `
-            
-            ;
+            for (let i in avaliableData) {
+              if (avaliableData[i][1] !== data.imdbID) {
+                savedOrNo = false
+              } else if (avaliableData[i][1] === data.imdbID) {
+                savedOrNo = true
+                break}}
+                movieRender(data);
+                
           });
       });
     })
