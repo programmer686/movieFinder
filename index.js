@@ -26,7 +26,7 @@ function movieRender(movie) {
   <div class="movie--card" >
       <div class="movie--body">
           <div class="controlImg">
-              <img class="movie--poster" id=${movie.imdbID} src=${movie.Poster} />
+              <img class="movie--poster" src=${movie.Poster} />
           </div>
           <div class="info--container">
               <h1 class="movie--title">${movie.Title}</h1>
