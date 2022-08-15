@@ -28,6 +28,18 @@ body {
     margin: 0;
     margin-top: 3%;
 }
+
+header {
+    width: 100%;
+    height: auto;
+    padding: 1.5% 0%;
+    background-color:#0a0a0a;
+    border-bottom: 1px solid #161515;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 #watchList {
     display: flex;
     justify-content: center;
@@ -106,7 +118,25 @@ kbd {
     margin: 0px 15px;
 }
 
+.header--link--container {
+    margin-right: 15px;
+}
+
 /* TEXT */
+
+.site--logo {
+    color: white;
+    font-family: monospace;
+    font-weight: 800;
+    font-size: 30px;
+    margin-left: 15px;
+}
+
+.site--logo-o {
+    color: rgb(226, 145, 23);
+    background-color: #0a0a0a;
+}
+
 .logo--title {
     color: white;
     font-size: 60px;
@@ -201,13 +231,18 @@ kbd {
     cursor: pointer;
 }
 #switch, .a {
-    width: 200px;
+    text-decoration: none;
+    font-family: monospace;
+    font-size: 1rem;
+    font-weight: 600;
+    color: white;
+    background: none;
     border: none;
-    font-weight: bold;
-    border-radius: 5px;
-    padding: 10px 0px;
-    color: black;
-    background-color: white;
+    margin-right: 20px;
+}
+
+#switch:hover {
+    color:rgb(226, 145, 23);;
 }
 
 #switch--watchlist, #switch--watchlist--delete{
@@ -261,10 +296,51 @@ span {
 
 @media (max-width: 500px) {
 
+
+    
+    header {
+        justify-content: space-between;
+        padding: 5% 3%;
+        border-bottom: 1px solid #0a0a0a;
+    }
+    .hamburger-menu--container {
+        border: 3px solid red;
+    }
+    .site--logo {
+        margin: 0;
+    }
+    
+#toggleMenu {width: 100%;}
+    #toggleMenu {
+        width: 10%;
+    }
+    .hamburger-menu{
+        width: 100%;
+        height: 5px;
+        margin: 2.5px 0px;
+        border-radius: 20px;
+        background-color: wheat;
+    }
+
+    .header--link--container {
+        display: none;
+        background-color:#0a0a0a;
+        margin: 0;
+        width: 100%;
+        top: 0;
+        left: 0;
+        text-align: center;
+        padding-bottom: 10px;
+        padding-top: 5px;
+
+        
+    }
     .search {
         width: 80%;
     }
     
+    
+
     .movie--body {
         display: flex;
         flex-direction: column;
@@ -300,7 +376,7 @@ span {
         margin-bottom: 8%;
     }
 
-    #watchList {margin-top: 0px; padding-top: 5%;}
+    #watchList {margin-top: 100%; padding-top: 5%;}
     
     .logo--title {
         color: white;

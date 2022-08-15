@@ -4,6 +4,8 @@ let search = document
   .addEventListener("change", (event) => {
     searchVal = event.target.value;
   });
+let menuLinks = document.getElementById("hamburger-menu")
+let toggleControl = document.getElementById("toggleMenu")
 let searchBtn = document.getElementById("searchBtn");
 let result = document.getElementById("results");
 let card = document.getElementById("card");
@@ -19,6 +21,11 @@ function storingData(id, name) {
   storingInfo.unshift([name, id]);
   window.localStorage.setItem("movieData", JSON.stringify(storingInfo));
   document.getElementById(id).remove();
+}
+let displayVal = false
+function handleDisplay() {
+  displayVal ? displayVal = false : displayVal = true
+  displayVal ? menuLinks.style.display = "block" : menuLinks.style.display = "none"
 }
 
 function movieRender(movie) {

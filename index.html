@@ -9,11 +9,23 @@
     <title>Finding Movies</title>
  </head>
  <body>
- 
+  <header>
+    <h1 class="site--logo">M<span class="site--logo-o">o</span>vie Night</h1>
+    <a href="#" id="toggleMenu" onclick="handleDisplay()" >
+      <div class="hamburger-menu"></div>
+      <div class="hamburger-menu"></div>
+      <div class="hamburger-menu"></div>
+    </a>
+  
+  </header>
+  <div id="hamburger-menu" class="header--link--container">
+    <a href="index.html"><button id="switch" onclick="handleLoading()">Home</button></a>
+    <a href="watchList.html"><button id="switch" onclick="handleLoading()">Watchlist</button></a>
+  </div>
   <div id="card">
       <h1 class="logo--title">Find Your film</h1>
       <kbd><input id="search" onkeypress="handleEnter()"class="search"  placeholder="Enter movie..."/><button class="search--btn" id="searchBtn" onclick="handleChange()"> Search</button></kbd>
-      <a href="watchList.html" class="a"><button id="switch" onclick="handleLoading()">My Watchlist</button></a>
+      
   </div>
   <div class="x">
     <div id="results"></div>

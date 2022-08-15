@@ -9,6 +9,13 @@ let removeAll = document.getElementById("switch--watchlist--delete").addEventLis
     <h1 class="camera">🎥</h1>
 </div>`;
 })
+let displayVal = false
+function handleDisplayWatchlist() {
+  displayVal ? displayVal = false : displayVal = true
+  displayVal ? menuLinks.style.display = "block" : menuLinks.style.display = "none"
+}
+let menuLinks = document.getElementById("hamburger-menu")
+let toggleControl = document.getElementById("toggleMenu")
 if (data.length == 0) {
   watchlist.innerHTML = `
   <div class="no--saved--container">
@@ -29,6 +36,8 @@ if (data.length == 0) {
     }
     document.getElementById(id).remove()
   }
+
+  
   function handleLoading() {
     watchlist.innerHTML = "";
     for (let i in data) {
