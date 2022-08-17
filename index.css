@@ -16,7 +16,7 @@ body {
     height: auto;
     box-sizing: border-box;
 }
-/* BODIES */
+/* CONTAINERS */
 #card {
     background: #161515;
     display: flex;
@@ -32,9 +32,9 @@ body {
 header {
     width: 100%;
     height: auto;
-    padding: 1.5% 0%;
+    padding: 1.5% 2%;
     background-color:#0a0a0a;
-    border-bottom: 1px solid #161515;
+    border: none;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -54,7 +54,7 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100%;
+    height: auto;
 }
 .search--container {
    display: flex;
@@ -69,19 +69,20 @@ kbd {
 }
 .movie--card {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 70%;
     max-width: 80%;
+    
 }
 
 .movie--body {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     margin: 20px 0px;
     width: 80%;
-    justify-content: space-between 
 }
 .controlImg {
     width: auto;
@@ -118,9 +119,7 @@ kbd {
     margin: 0px 15px;
 }
 
-.header--link--container {
-    margin-right: 15px;
-}
+
 
 /* TEXT */
 
@@ -128,7 +127,7 @@ kbd {
     color: white;
     font-family: monospace;
     font-weight: 800;
-    font-size: 30px;
+    font-size: 2.5rem;
     margin-left: 15px;
 }
 
@@ -189,13 +188,7 @@ kbd {
 }
 
 .added {
-    width: 20px;
-    color: black;
-    height: 20px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    margin-left: 15px;
     color: green;
     font-size: medium;
     text-shadow: -0.5 2px 2px gray;
@@ -213,6 +206,7 @@ kbd {
     font-weight: bold;
     font-size: medium;
 }
+
 
 
 /* BUTTONS */
@@ -233,12 +227,13 @@ kbd {
 #switch, .a {
     text-decoration: none;
     font-family: monospace;
-    font-size: 1rem;
+    font-size: 1.5rem;
     font-weight: 600;
     color: white;
     background: none;
     border: none;
-    margin-right: 20px;
+    margin-top: 20px;
+    padding-bottom: 20px;
 }
 
 #switch:hover {
@@ -264,13 +259,14 @@ kbd {
 #switch--watchlist--delete{
     color: black;
     background-color: red;
-    margin-left: auto;
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
+    border-radius: 5px;
 }
 
+
+.error {
+    background: #161515;
+}
 .add--to--list, .remove--btn {
-    align-content: center;
     border-radius: 50%;
     border: none;
     width: 20px;
@@ -279,7 +275,7 @@ kbd {
     background-color: white;
     font-weight: bolder;
     margin: 0;
-    margin-left: 1px;
+    margin-left: 15px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -288,53 +284,80 @@ kbd {
 .movie--poster {
     max-width: 150px;
 }
-span {
+.bottom--border {
     width: 100%;
     background-color: #3a3b3c;
     height: 1px;
+    margin: 2% 0%;
 }
 
+
+/* NAVBAR */
+
+.hamburger-menu{
+    width: 100%;
+    height: 5px;
+    margin: 2.5px 0px;
+    border-radius: 20px;
+    background-color: white;
+}
+
+.hamburger-menu--container {
+    border: 3px solid red;
+}
+.site--logo {
+    margin: 0;
+}
+
+#toggleMenu {
+    width: 3%;
+}
+
+.header--link--container {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color:#0a0a0a;
+    margin: 0;
+    width: 100%;
+    top: 0;
+    left: 0;
+    text-align: center;
+}
+
+/* FOOTER */ 
+
+ footer {
+    width: 100%;
+    height: 25vh;
+    background: #0a0a0a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ }
+
+.footer--author {
+    text-decoration: none;
+    font-family: monospace;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: white;
+}
+
+.footer--author--number {
+    background: #0a0a0a;
+    color: rgb(226, 145, 23);
+}
 @media (max-width: 500px) {
-
-
-    
-    header {
-        justify-content: space-between;
-        padding: 5% 3%;
-        border-bottom: 1px solid #0a0a0a;
-    }
-    .hamburger-menu--container {
-        border: 3px solid red;
-    }
-    .site--logo {
-        margin: 0;
-    }
-    
-#toggleMenu {width: 100%;}
     #toggleMenu {
-        width: 10%;
-    }
-    .hamburger-menu{
-        width: 100%;
-        height: 5px;
-        margin: 2.5px 0px;
-        border-radius: 20px;
-        background-color: wheat;
+        width: 7%;
     }
 
-    .header--link--container {
-        display: none;
-        background-color:#0a0a0a;
-        margin: 0;
-        width: 100%;
-        top: 0;
-        left: 0;
-        text-align: center;
-        padding-bottom: 10px;
-        padding-top: 5px;
-
-        
+    footer {
+        height: 50vh;
     }
+    
     .search {
         width: 80%;
     }

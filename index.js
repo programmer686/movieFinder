@@ -15,25 +15,29 @@ function handleEnter(ele) {
     handleChange();
   }
 }
+
 let searchVal = "";
 let storingInfo = JSON.parse(window.localStorage.getItem("movieData")) || [];
 function storingData(id, name) {
   storingInfo.unshift([name, id]);
   window.localStorage.setItem("movieData", JSON.stringify(storingInfo));
-  document.getElementById(id).remove();
+  document.getElementById(id).remove()
 }
 let displayVal = false
 function handleDisplay() {
   displayVal ? displayVal = false : displayVal = true
-  displayVal ? menuLinks.style.display = "block" : menuLinks.style.display = "none"
+  displayVal ? menuLinks.style.display = "flex" : menuLinks.style.display = "none"
 }
+
+
+card.style.height = "75vh"
 
 function movieRender(movie) {
   result.innerHTML += `
-  <div class="movie--card" >
+  <div class="movie--card" id='${movie.imdbID}' >
       <div class="movie--body">
           <div class="controlImg">
-              <img class="movie--poster" src=${movie.Poster} />
+              <img class="movie--poster" src=${movie.Poster}   onerror="this.onerror=null;this.src='movieErrorImage.webp';">
           </div>
           <div class="info--container">
               <h1 class="movie--title">${movie.Title}</h1>
@@ -49,18 +53,25 @@ function movieRender(movie) {
                   ${
                     savedOrNo
                       ? `<p class="added">Added</p>`
-                      : `<button id='${movie.imdbID}' onclick="storingData('${movie.imdbID}', '${movie.Title}')" class="add--to--list" >+</button>`
+                      : `<button onclick="storingData('${movie.imdbID}', '${movie.Title}')" class="add--to--list" >+</button>`
                   }
               </div>
               <p class="movie--plot">${movie.Plot}</p>
-               <span></span>
           </div>
+         
       </div>
- </div>
-  <span></span>`;
+      <span class="bottom--border"></span>
+ </div>`
+ 
 }
+
+function clearInput() {
+  document.getElementById("search").value = ""
+}
+
 let savedOrNo = false;
 function handleChange() {
+  card.style.height = "auto"
   result.innerHTML = "";
   fetch(`https://www.omdbapi.com/?s=${searchVal}&plot=short&apikey=95ff048`)
     .then((jsoned) => jsoned.json())
@@ -79,6 +90,8 @@ function handleChange() {
                 break;
               }
             }
+
+            clearInput();
             movieRender(data);
           });
       });

@@ -1,5 +1,6 @@
 let watchlist = document.getElementById("watchList");
 let data = JSON.parse(window.localStorage.getItem("movieData"));
+console.log(window.localStorage.getItem("movieData"))
 let removeAll = document.getElementById("switch--watchlist--delete").addEventListener("click", () => {
   window.localStorage.clear()
   watchlist.innerHTML = `
@@ -12,7 +13,7 @@ let removeAll = document.getElementById("switch--watchlist--delete").addEventLis
 let displayVal = false
 function handleDisplayWatchlist() {
   displayVal ? displayVal = false : displayVal = true
-  displayVal ? menuLinks.style.display = "block" : menuLinks.style.display = "none"
+  displayVal ? menuLinks.style.display = "flex" : menuLinks.style.display = "none"
 }
 let menuLinks = document.getElementById("hamburger-menu")
 let toggleControl = document.getElementById("toggleMenu")
