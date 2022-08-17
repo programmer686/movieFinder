@@ -366,11 +366,18 @@ kbd {
         height: 50vh;
     }
     
+    #switch--watchlist--delete {
+        margin-bottom: 15px;
+        margin-top:  15%;
+    }
+
     .search {
         width: 80%;
     }
     
-    
+    #toggleMenu {
+        width: 10%;
+    }
 
     .movie--body {
         display: flex;
@@ -378,15 +385,16 @@ kbd {
         justify-content: center;
         align-items: center;
         margin: 0px 0px;
-        width: 50%;
-        padding: 0;
-        justify-content: space-between
+        width: auto;
+        padding: 10px 10px;
 }
 
     .movie--poster {
     width: 125%;
 }
-
+    #results {
+        margin: 0 20px;
+    }
     .controlImg {
         width: 100%;
         margin: 0;
@@ -399,19 +407,22 @@ kbd {
         width: auto;
         height: auto;
         align-items: center;
-        justify-content: center;;
+        justify-content: flex-start;;
         text-align: center;
         height: auto;
-        margin-top: 25%;
-        padding: 0;
+        margin: 0 ;
     }
 
     
     .logo--title {
         color: white;
         bottom: 0;
-        font-size: 2.3rem;
+        font-size: 1.6rem;
         margin-top: 50px;
+    }
+
+    .footer--author  {
+        font-size: 1rem;
     }
 
     .movie--title {
@@ -423,14 +434,9 @@ kbd {
     }
 
     .movie--plot{
-        width: 100%;
+        width: 80vw;
     }
 
-    .movie--body{
-        width: 100vw;
-        height: auto;
-        padding: 10px 0px;
-    }
     
     .movie--card {
         width: 100%;
@@ -459,9 +465,26 @@ kbd {
 
     
 
+    #switch {
+        font-size: 1rem;
+        margin: 2px 0px;
+        padding: 5px 0px;
+    }
     
-    
+    #watchList {
+        padding: 15px 0;
+    }
 
+    .no--saved--container {
+        width: 80vw;
+        margin: 0px 50px;
+        padding: 10px;
+        margin-top:  0;
+    }
+
+    .no--movie--text {
+        font-size: 1.2rem;
+    }
     footer {
         padding: 20px;
         height: 10%;
@@ -469,6 +492,7 @@ kbd {
     .site--logo {
         margin: 0;
         padding: 0;
+        font-size: 1.7rem;
     }
     .search {
         margin: 0;
