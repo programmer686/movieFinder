@@ -25,8 +25,7 @@ body {
     justify-content: center;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
-    margin: 0;
-    margin-top: 3%;
+    margin: 2% 0%;
 }
 
 header {
@@ -46,8 +45,9 @@ header {
     align-items: center;
     flex-direction: column;
     width: 100vw;
-    margin-top: 2%;
     padding: 50px;
+    height: auto;
+    padding-bottom: 0;
 }
 #results {
     display: flex;
@@ -108,6 +108,7 @@ kbd {
     align-items: center;
     justify-content: center;
     box-shadow: -2px 5px 5px black;
+    margin: 20px 0px;
 }
 
 .watchList-btn--container {
@@ -353,7 +354,6 @@ kbd {
     #toggleMenu {
         width: 7%;
     }
-
     footer {
         height: 50vh;
     }
@@ -452,9 +452,9 @@ kbd {
     }
 
     .no--saved--container {
-        margin-top: 10%;
+        margin-top: 0;
         width: 90%;
-        padding: 10px;
+        padding: 0;
     }
 
     #switch {
@@ -472,11 +472,10 @@ kbd {
     }
      
     #switch--watchlist--delete {
-        margin: 0;
-        width: 40%;
-        margin-top: 2%;
-        padding: 10px;
-        border-radius: 5px;
+       border: 1px solid green;
+       padding: 0;
+       width: 50px;
+       height: 50px;;
     }
 }
 

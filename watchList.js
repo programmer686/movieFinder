@@ -1,14 +1,17 @@
 let watchlist = document.getElementById("watchList");
 let data = JSON.parse(window.localStorage.getItem("movieData"));
-console.log(window.localStorage.getItem("movieData"))
-let removeAll = document.getElementById("switch--watchlist--delete").addEventListener("click", () => {
-  window.localStorage.clear()
+function nothingSaved() {
   watchlist.innerHTML = `
   <div class="no--saved--container">
     <h1 class="no--movie--text">You dont have any movies saved yet!</h1>
     <h1 class="no--movie--text">Go find some</h1>
     <h1 class="camera">🎥</h1>
 </div>`;
+}
+nothingSaved();
+let removeAll = document.getElementById("switch--watchlist--delete").addEventListener("click", () => {
+  window.localStorage.clear()
+  nothingSaved();
 })
 let displayVal = false
 function handleDisplayWatchlist() {
