@@ -366,6 +366,10 @@ kbd {
         height: 50vh;
     }
     
+    header {
+        padding: 20px 8px;
+    }
+
     #switch--watchlist--delete {
         margin-bottom: 15px;
         margin-top:  15%;
@@ -419,6 +423,7 @@ kbd {
         bottom: 0;
         font-size: 1.6rem;
         margin-top: 50px;
+        margin-bottom: 10px;
     }
 
     .footer--author  {
