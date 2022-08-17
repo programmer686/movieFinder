@@ -13,6 +13,7 @@ body {
     justify-content: center;
     padding: 0;
     width: 100%;
+    height: auto;
     box-sizing: border-box;
 }
 /* CONTAINERS */
@@ -48,6 +49,10 @@ header {
     height: auto;
     padding-bottom: 0;
 }
+.a {
+    border: 1px solid red;
+}
+
 #results {
     display: flex;
     flex-direction: column;
@@ -101,13 +106,14 @@ kbd {
     border-radius: 5px;
     text-align: center;
     width: 60%;
-    height: 60vh;
+    height: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     box-shadow: -2px 5px 5px black;
     margin: 20px 0px;
+    padding: 10px 0px;
 }
 
 .watchList-btn--container {
@@ -167,7 +173,6 @@ kbd {
 }
 .star {
     margin-right: 15px;
-    margin-left: 5px;
 }
 
 .minus {
@@ -260,6 +265,7 @@ kbd {
     color: black;
     background-color: red;
     border-radius: 5px;
+    margin: 0;
 }
 
 
@@ -330,11 +336,14 @@ kbd {
 
  footer {
     width: 100%;
-    height: 25vh;
+    padding: 20px;
     background: #0a0a0a;
     display: flex;
     justify-content: center;
     align-items: center;
+    position: fixed;
+    bottom: 0;
+    right: 0;
  }
 
 .footer--author {
@@ -387,18 +396,16 @@ kbd {
     }
 
     #card {
-        width: 100vw;
+        width: auto;
         height: auto;
         align-items: center;
-        justify-content: space-around;
+        justify-content: center;;
         text-align: center;
-        height: 30vh;
+        height: auto;
+        margin-top: 25%;
         padding: 0;
-        top: 0;
-        margin-bottom: 8%;
     }
 
-    #watchList {margin-top: 100%; padding-top: 5%;}
     
     .logo--title {
         color: white;
@@ -450,29 +457,20 @@ kbd {
         height: 15px;
     }
 
-    .no--saved--container {
-        margin-top: 0;
-        width: 90%;
-        padding: 0;
-    }
+    
 
-    #switch {
-        width: 10%
-    }
-    #switch--watchlist {
-        padding: 10px;
-        margin-top: 2%;
-        border-radius: 5px;
-    }
-    #switch--watchlist--delete {
-       border: 1px solid green;
-       padding: 0;
-       width: 50px;
-       height: 50px;;
-    }
+    
+    
 
     footer {
         padding: 20px;
-        height: 100%;
+        height: 10%;
+    }
+    .site--logo {
+        margin: 0;
+        padding: 0;
+    }
+    .search {
+        margin: 0;
     }
 }

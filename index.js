@@ -97,8 +97,9 @@ function handleChange() {
     });
 }
 
-function handleEnter(ele) {
+function handleEnter(event) {
   if (event.key === "Enter") {
+    event.preventDefault()
     handleChange();
   }
 }
