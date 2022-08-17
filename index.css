@@ -358,7 +358,7 @@ kbd {
     background: #0a0a0a;
     color: rgb(226, 145, 23);
 }
-@media (max-width: 300px) {
+@media (max-width: 500px) {
     #toggleMenu {
         width: 7%;
     }
