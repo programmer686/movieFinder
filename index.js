@@ -10,11 +10,7 @@ let searchBtn = document.getElementById("searchBtn");
 let result = document.getElementById("results");
 let card = document.getElementById("card");
 let avaliableData = JSON.parse(window.localStorage.getItem("movieData"));
-function handleEnter(ele) {
-  if (event.key === "Enter") {
-    handleChange();
-  }
-}
+
 
 let searchVal = "";
 let storingInfo = JSON.parse(window.localStorage.getItem("movieData")) || [];
@@ -99,4 +95,10 @@ function handleChange() {
     .catch((error) => {
       result.innerHTML = `<h1 class="error"><span>Error!!! Something Went wrong</span></h1>`;
     });
+}
+
+function handleEnter(ele) {
+  if (event.key === "Enter") {
+    handleChange();
+  }
 }

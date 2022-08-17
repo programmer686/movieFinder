@@ -13,7 +13,6 @@ body {
     justify-content: center;
     padding: 0;
     width: 100%;
-    height: auto;
     box-sizing: border-box;
 }
 /* CONTAINERS */
@@ -458,24 +457,22 @@ kbd {
     }
 
     #switch {
-        width: 50%;
-        padding: 5px;
+        width: 10%
     }
-    .watchList-btn--container {
-        flex-direction: column;
-    }
-
     #switch--watchlist {
         padding: 10px;
         margin-top: 2%;
         border-radius: 5px;
     }
-     
     #switch--watchlist--delete {
        border: 1px solid green;
        padding: 0;
        width: 50px;
        height: 50px;;
     }
-}
 
+    footer {
+        padding: 20px;
+        height: 100%;
+    }
+}
