@@ -10,7 +10,7 @@ let searchBtn = document.getElementById("searchBtn");
 let result = document.getElementById("results");
 let card = document.getElementById("card");
 let avaliableData = JSON.parse(window.localStorage.getItem("movieData"));
-function handleEnter(ele) {
+function handleEnter(event) {
   event.preventDefault();
   if (event.key === "Enter") {
     handleChange();
