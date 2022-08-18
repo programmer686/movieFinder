@@ -10,12 +10,8 @@ let searchBtn = document.getElementById("searchBtn");
 let result = document.getElementById("results");
 let card = document.getElementById("card");
 let avaliableData = JSON.parse(window.localStorage.getItem("movieData"));
-function handleEnter(event) {
-  event.preventDefault();
-  if (event.key === "Enter") {
-    handleChange();
-  }
-}
+
+
 
 let searchVal = "";
 let storingInfo = JSON.parse(window.localStorage.getItem("movieData")) || [];
@@ -73,7 +69,11 @@ function clearInput() {
 }
 
 let savedOrNo = false;
-function handleChange() {
+function handleChange(event) {
+  event.preventDefault();
+  if (event.key === "Enter") {
+    handleChange();
+  }
   card.style.height = "auto";
   result.innerHTML = "";
   fetch(`https://www.omdbapi.com/?s=${searchVal}&plot=short&apikey=95ff048`)

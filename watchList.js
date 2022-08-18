@@ -53,12 +53,12 @@ if (data.length == 0) {
         .then((jsoned) => jsoned.json())
         .then((info) => {
           watchlist.innerHTML += `
-                      <div id='${info.imdbID}' class="movie--card save--movie" >
-                          <div class="movie--body save--movie--body">
+                      <div id='${info.imdbID}' class="movie--card" >
+                          <div class="movie--body ">
                               <div class="controlImg">
-                                  <img class="movie--poster" src=${info.Poster} onerror="this.onerror=null;this.src='movieErrorImage.webp'/>
+                                  <img class="movie--poster" src=${info.Poster} >
                               </div>
-                              <div class="info--container saved--info--container">
+                              <div class="info--container ">
                                   <h1 class="movie--title">${info.Title}</h1>
                                   <div class="genreRuntime--container">
                                       <p class="movie--genre">${info.Genre}</p>
@@ -75,8 +75,6 @@ if (data.length == 0) {
                      </div>
                      <span></span> `;
         });
-
-      //  document.getElementById("remove--btn").addEventListener("click", () => remove(info.Title))})
     }
   }
 }

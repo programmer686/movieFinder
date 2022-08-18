@@ -49,9 +49,6 @@ header {
     height: auto;
     padding-bottom: 0;
 }
-.a {
-    border: 1px solid red;
-}
 
 #results {
     display: flex;
@@ -60,17 +57,7 @@ header {
     align-items: center;
     height: auto;
 }
-.search--container {
-   display: flex;
-}
-kbd {
-    width: 80%;
-    margin-bottom: 2%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-bottom: 2%;
-}
+
 .movie--card {
     display: flex;
     flex-direction: column;
@@ -86,12 +73,12 @@ kbd {
     justify-content: flex-start;
     align-items: center;
     margin: 20px 0px;
-    width: 80%;
+    width: fit-content;
 }
 .controlImg {
-    width: auto;
     margin: 0;
     margin-right: 25px;
+    width: fit-content;
 }
 .genreRuntime--container{
     display: flex;
@@ -116,6 +103,12 @@ kbd {
     padding: 10px 0px;
 }
 
+.save--movie {
+    display: flex;
+    border: 1px solid blue;
+    width: fit-content;
+}
+
 .watchList-btn--container {
     display: flex;
     justify-content: center;
@@ -125,6 +118,10 @@ kbd {
     margin: 0px 15px;
 }
 
+form {
+    width: fit-content;
+    display: flex;
+}
 
 
 /* TEXT */
@@ -281,7 +278,7 @@ kbd {
     background-color: white;
     font-weight: bolder;
     margin: 0;
-    margin-left: 15px;
+    margin-left: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -435,7 +432,7 @@ kbd {
     }
 
     .genreRuntime--container {
-        width: 120%;
+        width: 100%;
     }
 
     .movie--plot{
@@ -447,15 +444,10 @@ kbd {
         width: 100%;
     }
 
-    .movie--genre, .movie--duration, .movie--rating, .info--separators {
+    .movie--genre, .movie--duration, .movie--rating, .info--separators, .added {
         font-size: 0.5rem;
         margin: 0px 2px;
     }
-
-   
-
-    kbd { width:80%; margin-bottom: 10px;
-    display: flex; align-items: center; justify-content: center;}
 
     .star {
         font-size: x-small;
@@ -502,5 +494,14 @@ kbd {
     }
     .search {
         margin: 0;
+        font-size: small;
+        
     }
+
+    form {
+        width: 90%;
+        margin: 0 20px;
+    }
+
+   
 }
