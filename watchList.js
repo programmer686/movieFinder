@@ -54,7 +54,7 @@ if (data.length == 0) {
                       <div id='${info.imdbID}' class="movie--card save--movie" >
                           <div class="movie--body save--movie--body">
                               <div class="controlImg">
-                                  <img class="movie--poster" src=${info.Poster} />
+                                  <img class="movie--poster" src=${info.Poster} onerror="this.onerror=null;this.src='movieErrorImage.webp'/>
                               </div>
                               <div class="info--container saved--info--container">
                                   <h1 class="movie--title">${info.Title}</h1>
