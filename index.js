@@ -4,36 +4,44 @@ let search = document
   .addEventListener("change", (event) => {
     searchVal = event.target.value;
   });
-let menuLinks = document.getElementById("hamburger-menu")
-let toggleControl = document.getElementById("toggleMenu")
+let menuLinks = document.getElementById("hamburger-menu");
+let toggleControl = document.getElementById("toggleMenu");
 let searchBtn = document.getElementById("searchBtn");
 let result = document.getElementById("results");
 let card = document.getElementById("card");
 let avaliableData = JSON.parse(window.localStorage.getItem("movieData"));
-
+function handleEnter(ele) {
+  event.preventDefault();
+  if (event.key === "Enter") {
+    handleChange();
+  }
+}
 
 let searchVal = "";
 let storingInfo = JSON.parse(window.localStorage.getItem("movieData")) || [];
 function storingData(id, name) {
   storingInfo.unshift([name, id]);
   window.localStorage.setItem("movieData", JSON.stringify(storingInfo));
-  document.getElementById(id).remove()
+  document.getElementById(id).remove();
 }
-let displayVal = false
+let displayVal = false;
 function handleDisplay() {
-  displayVal ? displayVal = false : displayVal = true
-  displayVal ? menuLinks.style.display = "flex" : menuLinks.style.display = "none"
+  displayVal ? (displayVal = false) : (displayVal = true);
+  displayVal
+    ? (menuLinks.style.display = "flex")
+    : (menuLinks.style.display = "none");
 }
 
-
-card.style.height = "75vh"
+card.style.height = "75vh";
 
 function movieRender(movie) {
   result.innerHTML += `
   <div class="movie--card" id='${movie.imdbID}' >
       <div class="movie--body">
           <div class="controlImg">
-              <img class="movie--poster" src=${movie.Poster}   onerror="this.onerror=null;this.src='movieErrorImage.webp';">
+              <img class="movie--poster" src=${
+                movie.Poster
+              }   onerror="this.onerror=null;this.src='movieErrorImage.webp';">
           </div>
           <div class="info--container">
               <h1 class="movie--title">${movie.Title}</h1>
@@ -57,17 +65,16 @@ function movieRender(movie) {
          
       </div>
       <span class="bottom--border"></span>
- </div>`
- 
+ </div>`;
 }
 
 function clearInput() {
-  document.getElementById("search").value = ""
+  document.getElementById("search").value = "";
 }
 
 let savedOrNo = false;
 function handleChange() {
-  card.style.height = "auto"
+  card.style.height = "auto";
   result.innerHTML = "";
   fetch(`https://www.omdbapi.com/?s=${searchVal}&plot=short&apikey=95ff048`)
     .then((jsoned) => jsoned.json())
@@ -97,9 +104,3 @@ function handleChange() {
     });
 }
 
-function handleEnter(event) {
-  if (event.key === "Enter") {
-    event.preventDefault()
-    handleChange();
-  }
-}

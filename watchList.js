@@ -9,17 +9,21 @@ function nothingSaved() {
 </div>`;
 }
 nothingSaved();
-let removeAll = document.getElementById("switch--watchlist--delete").addEventListener("click", () => {
-  window.localStorage.clear()
-  nothingSaved();
-})
-let displayVal = false
+let removeAll = document
+  .getElementById("switch--watchlist--delete")
+  .addEventListener("click", () => {
+    window.localStorage.clear();
+    nothingSaved();
+  });
+let displayVal = false;
 function handleDisplayWatchlist() {
-  displayVal ? displayVal = false : displayVal = true
-  displayVal ? menuLinks.style.display = "flex" : menuLinks.style.display = "none"
+  displayVal ? (displayVal = false) : (displayVal = true);
+  displayVal
+    ? (menuLinks.style.display = "flex")
+    : (menuLinks.style.display = "none");
 }
-let menuLinks = document.getElementById("hamburger-menu")
-let toggleControl = document.getElementById("toggleMenu")
+let menuLinks = document.getElementById("hamburger-menu");
+let toggleControl = document.getElementById("toggleMenu");
 if (data.length == 0) {
   watchlist.innerHTML = `
   <div class="no--saved--container">
@@ -30,7 +34,6 @@ if (data.length == 0) {
 } else {
   handleLoading();
   function removeOne(id) {
-    
     for (let i in data) {
       if (data[i][1] === id) {
         let index = data.indexOf(data[i]);
@@ -38,10 +41,9 @@ if (data.length == 0) {
         window.localStorage.setItem("movieData", JSON.stringify(data));
       }
     }
-    document.getElementById(id).remove()
+    document.getElementById(id).remove();
   }
 
-  
   function handleLoading() {
     watchlist.innerHTML = "";
     for (let i in data) {
