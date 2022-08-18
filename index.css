@@ -9,7 +9,7 @@ body {
     background: #161515;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: center;;
     justify-content: center;
     padding: 0;
     width: 100%;
@@ -63,14 +63,14 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 70%;
-    max-width: 80%;
-    
+    max-width: 50%;
+    width: fit-content;
+    border: 1px solid red,
 }
 
 .movie--body {
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     margin: 20px 0px;
     width: fit-content;
@@ -272,8 +272,7 @@ form {
 .add--to--list, .remove--btn {
     border-radius: 50%;
     border: none;
-    width: 20px;
-    height: 20px;
+    padding: 0.5% 1%;
     color: black;
     background-color: white;
     font-weight: bolder;

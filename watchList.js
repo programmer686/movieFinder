@@ -56,7 +56,7 @@ if (data.length == 0) {
                       <div id='${info.imdbID}' class="movie--card" >
                           <div class="movie--body ">
                               <div class="controlImg">
-                                  <img class="movie--poster" src=${info.Poster} >
+                                  <img class="movie--poster" src=${info.Poster} onerror="this.onerror=null;this.src='movieErrorImage.webp';"/>
                               </div>
                               <div class="info--container ">
                                   <h1 class="movie--title">${info.Title}</h1>
@@ -66,7 +66,7 @@ if (data.length == 0) {
                                       <p class="movie--duration">${info.Runtime}</p>
                                       <p class="info--separators">|</p>
                                       <p class="movie--rating">${info.imdbRating}</p><p class="star">⭐</p>
-                                      <button class="remove--btn" onclick="removeOne('${info.imdbID}')"><span class="minus"></span></button>
+                                      <button class="remove--btn" onclick="removeOne('${info.imdbID}')">-</button>
                                   </div>
                                   <p class="movie--plot">${info.Plot}</p>
                                    <span></span>
